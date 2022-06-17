@@ -14,8 +14,11 @@ return <ul className="expenses-list">
     <ExpenseItem
       key={expense.id}
       title={expense.title}
+      sport={expense.sport}
+      description={expense.description}
       amount={expense.amount}
       date={expense.date}
+      
     />
   ))}
   </ul>

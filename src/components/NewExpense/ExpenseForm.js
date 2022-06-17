@@ -3,6 +3,8 @@ import "./ExpenseForm.css";
 
 const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
+  const [enteredSport, setEnteredSport] = useState("");
+  const [enteredDescription, setEnteredDescription] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
 
@@ -14,6 +16,14 @@ const ExpenseForm = (props) => {
 
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
+  };
+
+  const sportChangeHandler = (event) => {
+    setEnteredSport(event.target.value);
+  };
+
+  const descriptionChangeHandler = (event) => {
+    setEnteredDescription(event.target.value);
   };
 
   const amountChangeHandler = (event) => {
@@ -29,11 +39,15 @@ const ExpenseForm = (props) => {
 
     const expenseData = {
       title: enteredTitle,
+      sport: enteredSport,
+      description: enteredDescription,
       amount: enteredAmount,
       date: new Date(enteredDate),
     };
     props.onSaveExpenseData(expenseData);
     setEnteredTitle("");
+    setEnteredSport("");
+    setEnteredDescription("");
     setEnteredAmount("");
     setEnteredDate("");
   };
@@ -48,6 +62,22 @@ const ExpenseForm = (props) => {
               type="text"
               value={enteredTitle}
               onChange={titleChangeHandler}
+            />
+          </div>
+          <div className="new-expense__control">
+            <label>Sport</label>
+            <input
+              type="text"
+              value={enteredSport}
+              onChange={sportChangeHandler}
+            />
+          </div>
+          <div className="new-expense__control">
+            <label>Description</label>
+            <input
+              type="text"
+              value={enteredDescription}
+              onChange={descriptionChangeHandler}
             />
           </div>
           <div className="new-expense__control">
