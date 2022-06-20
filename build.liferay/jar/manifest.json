@@ -1,0 +1,18 @@
+{
+  "packages": {
+    "/": {
+      "dest": {
+        "dir": "./build.liferay/jar",
+        "id": "/",
+        "name": "test-react",
+        "version": "0.1.0"
+      },
+      "src": {
+        "dir": ".",
+        "id": "/",
+        "name": "test-react",
+        "version": "0.1.0"
+      }
+    }
+  }
+}
