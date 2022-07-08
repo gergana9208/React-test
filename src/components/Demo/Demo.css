@@ -1,0 +1,68 @@
+.title {
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(255, 0, 0);
+    padding-bottom: 20px;
+}
+
+.buttons{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    
+}
+
+
+button.import {
+    border: 10px;
+    border-radius: 5px;
+    background-color: rgb(255, 192, 4);
+    background-size: 20%;
+    font-size: medium;
+    font-weight: 600;
+    color: white;
+    border: 1px solid rgb(0, 60, 255);
+    height: 40px;
+    line-height:19px;
+    width: 90px 
+}
+
+button.create{
+    border: 10px;
+    border-radius: 5px;
+    background-color: rgb(255, 192, 4);
+    font-weight: 600;
+    background-size: 20%;
+    font-size: medium;
+    color: white;
+    border: 1px solid rgb(0, 60, 255);
+    height: 40px;
+    line-height:19px;
+    width: 160px;
+    
+}
+button.choose{
+    
+   
+    font-size: 14px;
+    height: 25px;
+    line-height:19px;
+    width: 90px 
+
+}
+
+button.action{
+    border: 10px;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    background-size: 20%;
+
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(108, 105, 105);
+    border: 1px solid rgb(220, 214, 214);
+    height: 40px;
+    line-height:19px;
+    width: 100px 
+
+}
+
