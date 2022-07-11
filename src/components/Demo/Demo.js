@@ -10,10 +10,7 @@ import Paper from "@mui/material/Paper";
 import Card from "../UI/Card";
 import DemoFilter from "./DemoFilter";
 import "./Demo.css";
-import "./DemoFilter.css"
-
-
-
+import "./DemoFilter.css";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -56,9 +53,6 @@ const rows = [
   ),
 ];
 
-
-
-
 export default function CustomizedTables() {
   return (
     <Card className="expenses">
@@ -88,9 +82,8 @@ export default function CustomizedTables() {
                 <StyledTableCell align="right">
                   {row.emptycol}
                   <div>
-                    <button className="action" align="right">&#9660;Actions</button> 
+                    <DemoFilter align="right"></DemoFilter>
                   </div>
-                  
                 </StyledTableCell>
               </StyledTableRow>
             ))}
@@ -108,11 +101,6 @@ export default function CustomizedTables() {
           <button className="import">Import</button>
         </div>
       </div>
-     
-      <DemoFilter/>
-      
-     
-     
     </Card>
   );
 }

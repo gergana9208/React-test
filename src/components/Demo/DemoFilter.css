@@ -1,6 +1,7 @@
 .demo-filter {
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 0 1rem;
+    
   }
   
   .demo-filter__control {
@@ -9,11 +10,14 @@
     align-items: center;
     justify-content: space-between;
     margin: 1rem 0;
+    
+    
   }
   
   .demo-filter label {
     font-weight: bold;
     margin-bottom: 0.5rem;
+    
   }
   
   .demo-filter select {
@@ -21,4 +25,19 @@
     padding: 0.5rem 3rem;
     font-weight: bold;
     border-radius: 6px;
+    
+    
+    
   }
+  select {
+    appearance: none;
+    
+    color: rgb(108, 105, 105);
+    border: 1px solid rgb(220, 214, 214);
+   
+  
+  }
+ 
+  
+  
+
