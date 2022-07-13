@@ -1,0 +1,39 @@
+.new-demo {
+    background-color: #ffffff;
+    padding: 5rem;
+    margin: 2rem auto;
+    width: 50rem;
+    max-width: 95%;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+  }
+  
+  .new-demo button {
+    font: inherit;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    border: 1px solid #c5c3c6;
+    background-color: #f2b211;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    border-radius: 12px;
+    margin-right: 1rem;
+  }
+  
+  .new-demo button:hover,
+  .new-demo button:active {
+    background-color: #e1dee3;
+    border-color: #e1dee3;
+  }
+  
+  .new-demo button.alternative {
+    color: #220131;
+    border-color: transparent;
+    background-color: transparent;
+  }
+  
+  .new-demo button.alternative:hover,
+  .new-demo button.alternative:active {
+    background-color: #ddb3f8;
+  }

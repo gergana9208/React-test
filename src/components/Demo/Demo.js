@@ -9,6 +9,8 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Card from "../UI/Card";
 import DemoFilter from "./DemoFilter";
+import NewDemo from "../NewDemo/NewDemo";
+
 import "./Demo.css";
 import "./DemoFilter.css";
 
@@ -53,6 +55,8 @@ const rows = [
   ),
 ];
 
+
+
 export default function CustomizedTables() {
   return (
     <Card className="expenses">
@@ -93,6 +97,7 @@ export default function CustomizedTables() {
       <div className="buttons">
         <div>
           <button className="create">Create new Cup</button>
+          
         </div>
         <div>
           <button className="choose">Choose file</button>

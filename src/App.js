@@ -4,6 +4,7 @@ import "./components/UI/Card.css";
 import { useState } from "react";
 import "./components/Expenses/ExpensesList.css";
 import Demo from "./components/Demo/Demo";
+import NewDemo from "./components/NewDemo/NewDemo";
 import NewExpense from "./components/NewExpense/NewExpense";
 
 const DUMMY_EXPENENSES = [
@@ -26,20 +27,21 @@ const DUMMY_EXPENENSES = [
 ];
 
 const App = () => {
-  const [expenses, setExpenses] = useState(DUMMY_EXPENENSES);
-  const addExpenseHandler = (expense) => {
-    setExpenses((prevExpenses) => {
-      return [expense, ...prevExpenses];
-    });
+    const [demo, setDemo] = useState(DUMMY_EXPENENSES);
+    const addDemoHandler = (demo) => {
+      setDemo((prevDemo) => {
+        return [demo, ...prevDemo];
+      });
   };
 
   return (
     <div className="App">
       <header className="App-header">
-        <Demo></Demo>
+        <Demo items={demo}></Demo>
         <h2 className="expenses-list__fallback">Another sample app: </h2>
-        <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
-        <Expenses items={expenses}></Expenses>
+       
+        <NewDemo onAddDemo={addDemoHandler}></NewDemo>
+       
       </header>
     </div>
   );
