@@ -22,15 +22,19 @@ const NewDemo = (props) => {
   };
 
   return (
-    <div className="new-demo">
+    <div className="new-demo" >
       {isEditing && (
+        <div >
         <DemoForm
           onSaveDemoData={saveDemoDataHandler}
           onCancel={stopEditingHandler}
         />
+        </div>
       )}
+
       {!isEditing && (
-        <button onClick={startEditingHandler}>Add New Cup</button>
+        <div >
+        <button onClick={startEditingHandler}>Import</button></div>
       )}
     </div>
   );

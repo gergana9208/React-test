@@ -1,11 +1,44 @@
 
-import Expenses from "./components/Expenses/Expenses";
 import "./components/UI/Card.css";
 import { useState } from "react";
-import "./components/Expenses/ExpensesList.css";
-import Demo from "./components/Demo/Demo";
+
+import "./components/Demos/DemosList.css"
+import Demos from "./components/Demos/Demos";
 import NewDemo from "./components/NewDemo/NewDemo";
-import NewExpense from "./components/NewExpense/NewExpense";
+import { styled } from "@mui/material/styles";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell, { tableCellClasses } from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+import { Card } from "@mui/material";
+
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+  [`&.${tableCellClasses.head}`]: {
+    backgroundColor: theme.palette.common.white,
+    color: "#808080",
+    fontWeight: 600,
+    textAlign: "left",
+    border: "1px solid rgb(220, 214, 214)",
+  },
+  [`&.${tableCellClasses.body}`]: {
+    fontSize: 14,
+    fontWeight: 600,
+    textAlign: "left",
+    border: "1px solid rgb(220, 214, 214)",
+  },
+}));
+
+const StyledTableRow = styled(TableRow)(({ theme }) => ({
+  "&:nth-of-type(odd)": {
+    backgroundColor: theme.palette.action.hover,
+    textAlign: "left",
+  },
+  // hide last border
+  "&:last-child td, &:last-child th": {},
+}));
 
 const DUMMY_EXPENENSES = [
   {
@@ -13,7 +46,6 @@ const DUMMY_EXPENENSES = [
     title: "telephone",
     sport: "football",
     description: "jdisjfsdion fdivjdjv fjidfjso",
-    amount: "45.34",
     date: new Date(2020, 45, 34),
   },
   {
@@ -21,26 +53,43 @@ const DUMMY_EXPENENSES = [
     title: " fridge",
     sport: "football",
     description: "jdisjfsdion fdivjdjv fjidfjso",
-    amount: "30.78",
     date: new Date(2019, 4, 12),
   },
 ];
 
 const App = () => {
-    const [demo, setDemo] = useState(DUMMY_EXPENENSES);
+    const [demos, setDemos] = useState(DUMMY_EXPENENSES);
     const addDemoHandler = (demo) => {
-      setDemo((prevDemo) => {
-        return [demo, ...prevDemo];
+      setDemos((prevDemos) => {
+        return [demo, ...prevDemos];
       });
   };
 
   return (
     <div className="App">
       <header className="App-header">
-        <Demo items={demo}></Demo>
-        <h2 className="expenses-list__fallback">Another sample app: </h2>
        
+        <h2 className="demo-list__fallback">Import a new Cup </h2>
         <NewDemo onAddDemo={addDemoHandler}></NewDemo>
+        
+        <h2 className="title">Mc Donalds's Cup List</h2>
+
+        <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 750 }} aria-label="customized table">
+          <TableHead>
+            <TableRow>
+              <StyledTableCell>Name</StyledTableCell>
+              <StyledTableCell align="right">Sport</StyledTableCell>
+              <StyledTableCell align="right">Description</StyledTableCell>
+              <StyledTableCell align="right">Date</StyledTableCell>
+            </TableRow>
+          </TableHead>
+          </Table>
+        </TableContainer>
+        
+        <Demos items={demos}></Demos>
+
+        
        
       </header>
     </div>
