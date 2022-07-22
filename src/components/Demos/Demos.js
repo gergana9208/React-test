@@ -3,25 +3,41 @@ import Card from "../UI/Card";
 import "./Demos.css";
 import DemosList from "./DemosList";
 
-
+const DUMMY_EXPENENSES = [
+  {
+    id: "e1",
+    title: "telephone",
+    sport: 'football',
+    description:'jdisjfsdion fdivjdjv fjidfjso',
+    amount: "45.34",
+    date: new Date(2020, 45, 34),
+  },
+  {
+    id: "e2",
+    title: " fridge",
+    sport: 'football',
+    description:'jdisjfsdion fdivjdjv fjidfjso',
+    amount: "30.78",
+    date: new Date(2019, 4, 12),
+  },
+];
 
 function Demos(props) {
-  const [fileterdYear, setfilteredYear] = useState("2022");
-
-  const filterChangeHandler = (selectedYear) => {
-    setfilteredYear(selectedYear);
+  const [demos, setDemos] = useState(DUMMY_EXPENENSES);
+    const addDemoHandler = (demo) => {
+      setDemos((prevDemos) => {
+        return [demo, ...prevDemos];
+      });
   };
-  const filteredDemos = props.items.filter((demo) => {
-    return demo.date.getFullYear().toString() === fileterdYear;
-  });
+
 
   
 
   return (
     <div>
       <Card className="demos">
-        
-        <DemosList items={filteredDemos}/>
+        <h1>Test</h1>
+        <DemosList items={DUMMY_EXPENENSES}/>
       </Card>
     </div>
   );

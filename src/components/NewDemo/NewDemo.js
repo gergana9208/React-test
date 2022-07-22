@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import "./NewDemo.css";
 import DemoForm from "./DemoForm";
 
+
 const NewDemo = (props) => {
   const [isEditing, setIsEditing] = useState(false);
-
+ 
   const saveDemoDataHandler = (enteredDemoData) => {
     const DemoData = {
       ...enteredDemoData,
@@ -22,6 +23,7 @@ const NewDemo = (props) => {
   };
 
   return (
+    
     <div className="new-demo" >
       {isEditing && (
         <div >
@@ -29,6 +31,7 @@ const NewDemo = (props) => {
           onSaveDemoData={saveDemoDataHandler}
           onCancel={stopEditingHandler}
         />
+        
         </div>
       )}
 
